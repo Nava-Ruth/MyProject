@@ -4,14 +4,16 @@ body {
     margin: 0;
     padding: 0;
     background-color: #121212; /* שחור */
-    color: #f5f5f5; /* אפור בהיר לטקסט */
+    color: #f5f5f5; /* אפור בהיר לטקסט */ 
     
   }
   
   header {
     background-color: #1e1e1e; /* אפור כהה */
     padding: 15px 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  
+    border-bottom: 1px solid #956b00; /* קו זהב כהה למעלה */
+
   }
   
   header nav {

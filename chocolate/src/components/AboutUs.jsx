@@ -1,7 +1,14 @@
 import React from 'react';
 import './styles.css'; // לוודא שה-CSS מחובר
+import { useNavigate } from 'react-router-dom';
 
 function AboutUs() {
+
+  const nav = useNavigate();
+
+  const move = () => {
+   nav("/Product")
+  }
   return (
     <div className="about-container">
       <h1>אודותינו</h1>
@@ -13,9 +20,9 @@ function AboutUs() {
       </p>
       <img src="/images/1.jpg" alt="חנות שוקולדים" />
       <br />
-      <a href="/Product" className="buy-now-btn">
-        התחל קנייה
-      </a>
+
+      <button onClick={()=>move()}>התחל קנייה</button>
+
     </div>
   );
 }

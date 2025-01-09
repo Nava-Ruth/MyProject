@@ -16,30 +16,36 @@ const store={
 
     users,
     currentUser,
-    login: (email,pasword)=>{
-
-        const user=users.find(u=>u.email==email && u.pasword==pasword)
-        if(!user)
-        {
-              alert("אחד הפרטים שגויים");
-        }
-        else{
-            setCurrentUser(user);
-        }
-    },
+    login: (email, pasword) => {
+      const user = users.find(u => u.email === email && u.pasword === pasword);
+      if (!user) {
+          alert("אחד הפרטים שגויים");
+          return false; // החזרה של כישלון
+      } else {
+          setCurrentUser(user);
+          return true; // החזרה של הצלחה
+      }
+  },
+  
     sigenup: (newUser) => {
         if (!newUser || !newUser.name || !newUser.email || !newUser.pas) {
           alert("פרטי המשתמש אינם תקינים. אנא מלא את כל השדות.");
-          return;
+          return false;
         }
         if (users.find(u => u.email === newUser.email)) {
           alert("משתמש עם כתובת מייל זו כבר קיים.");
+          return false;
         } else {
           setUsers([...users, { ...newUser, id: users.length + 1 }]);
           setCurrentUser(newUser);
           alert("נרשמת בהצלחה!");
+          return true;
         }
-      }
+      },
+
+      logout: () => {
+        setCurrentUser(null); // אופציונלי: אפשר גם לנקות מידע נוסף אם יש צורך
+      },
 }
 
 return store

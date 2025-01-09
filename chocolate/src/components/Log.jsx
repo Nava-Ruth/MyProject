@@ -1,25 +1,34 @@
 import React, { useContext, useState } from "react";
 import "./styles.css";
 import MyContex from "../context";
+import { useNavigate } from "react-router-dom";
 
 function Log() {
 
-
+  const nav = useNavigate();
   const [email,setEmail]=useState("");
   const [pas,setPas]=useState("");
   const[name,setName]=useState("");
-//   const [newUser,setNewUser]=useState(null)
+ 
+  //יבוא הפונקציות מהסטור
+  const { login, sigenup } = useContext(MyContex);
 
-  const { login } = useContext(MyContex);
-  const{sigenup}=useContext(MyContex)
-
-  const onLog=()=>{
-    login(email,pas);
-  }
+  const onLog = () => {
+    if (login(email, pas)) {
+        nav("/profile"); // אם ההתחברות הצליחה, הוביל לדף הפרופיל
+    } else {
+        setIsLogin(false); // הפנה לדף ההרשמה
+    }
+};
 
   const onSigen = () => {
     const newUser = { name, email, pas };
-    sigenup(newUser);
+    if(sigenup(newUser))
+    {
+      nav("/profile");
+    }
+    
+    
   };
   
 

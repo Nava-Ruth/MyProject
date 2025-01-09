@@ -4,13 +4,13 @@
   justify-content: center; /* מרכז את הכרטיסים */
   gap: 10px; /* רווחים בין הכרטיסים */
   padding: 30px;
-  border-top: 1px solid #956b00; /* קו זהב כהה למעלה */
+ 
 }
 
 .card {
   background-color: #2b2b2b; /* שחור כהה */
   border: 1px solid #956b00; /* גבול זהב כהה */
-  border-radius: 0; /* פינות חדות */
+  border-radius: 3%;  
   width: 200px; /* גודל קטן יותר */
   margin: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
@@ -27,6 +27,7 @@
   height: 150px; /* גובה קבוע */
   object-fit: cover;
   margin-bottom: 10px;
+  border-radius: 3%;
 }
 
 .card p {
@@ -38,13 +39,16 @@
 /* עיצוב החלק של הפעולות */
 .card-actions {
   display: flex;
-  justify-content: space-between; /* מרווח שווה בין האלמנטים */
   align-items: center;
+  justify-content: center;
   margin: 10px;
+   
 }
 
 /* קישור "לפרטים נוספים" */
 .card a {
+  width: 80%;
+  text-align: center;
   background-color: #000000; /* כפתור שחור */
   color: #956b00; /* טקסט זהב כהה */
   text-decoration: none;
@@ -52,6 +56,7 @@
   padding: 8px 12px;
   border: 1px solid #956b00;
   transition: background-color 0.3s, color 0.3s;
+   
 }
 
 .card a:hover {
@@ -61,21 +66,24 @@
 
 /* כפתור "הוסף לסל" */
 .add-to-cart-btn {
+  width: 20%;
+  height: 5vh;
   display: flex;
   align-items: center;
-  justify-content: center;
   background-color: #956b00; /* זהב כהה */
   color: #ffffff;
   border: none;
-  /* border-radius: 4px; */
-  padding: 8px 10px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
+  border-top-right-radius:20%;
+  border-bottom-right-radius:20%;
 }
 
 .add-to-cart-btn:hover {
   background-color: #121212; /* שחור כהה */
   transform: scale(1.05);
+  border-top-right-radius:20%;
+  border-bottom-right-radius:20%;
 }
 
 .add-to-cart-btn svg {
@@ -179,7 +187,7 @@
 
 /* כפתור מחיקה */
 .remove-from-cart-btn {
-  background-color: #956b00; /* אדום */
+  background-color: #956b00;  
   color: #ffffff; /* טקסט לבן */
   border: none;
   border-radius: 4px;
@@ -415,7 +423,7 @@ input:focus {
   box-shadow: 0 0 8px rgba(245, 245, 245, 0.5);
 }
 
-button {
+.log-container button {
   width: 100%;
   padding: 10px;
   font-size: 16px;
