@@ -1,0 +1,449 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap; /* מאפשר לשבור שורות */
+  justify-content: center; /* מרכז את הכרטיסים */
+  gap: 10px; /* רווחים בין הכרטיסים */
+  padding: 30px;
+  border-top: 1px solid #956b00; /* קו זהב כהה למעלה */
+}
+
+.card {
+  background-color: #2b2b2b; /* שחור כהה */
+  border: 1px solid #956b00; /* גבול זהב כהה */
+  border-radius: 0; /* פינות חדות */
+  width: 200px; /* גודל קטן יותר */
+  margin: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+.card img {
+  width: 100%;
+  height: 150px; /* גובה קבוע */
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 16px;
+  margin: 10px;
+  color: #956b00; /* טקסט זהב כהה */
+}
+
+/* עיצוב החלק של הפעולות */
+.card-actions {
+  display: flex;
+  justify-content: space-between; /* מרווח שווה בין האלמנטים */
+  align-items: center;
+  margin: 10px;
+}
+
+/* קישור "לפרטים נוספים" */
+.card a {
+  background-color: #000000; /* כפתור שחור */
+  color: #956b00; /* טקסט זהב כהה */
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 12px;
+  border: 1px solid #956b00;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.card a:hover {
+  background-color: #121212; /* שחור כהה */
+  color: #ffffff; /* לבן */
+}
+
+/* כפתור "הוסף לסל" */
+.add-to-cart-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #956b00; /* זהב כהה */
+  color: #ffffff;
+  border: none;
+  /* border-radius: 4px; */
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #121212; /* שחור כהה */
+  transform: scale(1.05);
+}
+
+.add-to-cart-btn svg {
+  font-size: 16px; /* גודל האייקון */
+}
+
+/* עיצוב פרטי המוצר */
+.details-container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #2b2b2b; /* שחור כהה */
+  border: 1px solid #956b00; /* גבול זהב כהה */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.details-container h1 {
+  font-size: 24px;
+  color: #956b00; /* זהב כהה */
+  margin-bottom: 20px;
+}
+
+.details-container img {
+  width: 100%;
+  max-width: 300px; /* גודל מרבי */
+  height: 300px; /* גובה קבוע */
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 5px solid #956b00;
+}
+
+.details-container p {
+  font-size: 18px;
+  color: #f5f5f5; /* אפור בהיר */
+  margin: 10px 0;
+}
+
+.details-container p span {
+  font-weight: bold;
+  color:#956b00; /* זהב כהה */
+}
+
+/* מכולת הסל */
+.cart-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1e1e1e; /* אפור כהה */
+  border: 1px solid #956b00; /* גבול זהב כהה */
+  border-radius: 4px; /* פינות מעוגלות */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* כותרת הסל */
+.cart-title {
+  font-size: 24px;
+  color: #956b00; /* זהב כהה */
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* רשימת המוצרים בסל */
+.cart-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* פריט בסל */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #2b2b2b; /* שחור כהה */
+  border: 1px solid #956b00; /* גבול זהב כהה */
+  border-radius: 4px; /* פינות מעוגלות */
+  margin-bottom: 15px;
+  padding: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 16px;
+  color: #956b00; /* זהב כהה */
+  margin: 0;
+}
+
+.cart-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+/* תמונת מוצר */
+.cart-item img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-right: 15px;
+}
+
+ 
+
+/* כפתור מחיקה */
+.remove-from-cart-btn {
+  background-color: #956b00; /* אדום */
+  color: #ffffff; /* טקסט לבן */
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.remove-from-cart-btn:hover {
+  transform: scale(1.05);
+}
+
+/* הודעה כאשר העגלה ריקה */
+.cart-empty {
+  font-size: 18px;
+  color: #f5f5f5; /* אפור בהיר */
+  text-align: center;
+  padding: 20px;
+}
+
+.contact-us {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #2b2b2b; /* שחור כהה */
+  border: 1px solid #956b00; /* גבול זהב כהה */
+  border-radius: 4px; /* פינות מעוגלות */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* צל */
+  color: #f5f5f5; /* טקסט אפור בהיר */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* מרכז את כל האלמנטים במרכז */
+  justify-content: center; /* מרכז את התוכן */
+}
+
+.contact-us h1 {
+  font-size: 24px;
+  color: #956b00; /* זהב כהה */
+  margin-bottom: 20px;
+}
+
+.contact-us form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* מרכז את השדות והכפתור */
+  gap: 15px; /* רווח בין האלמנטים */
+  width: 100%; /* וודא שהפורם תופס את כל הרוחב */
+}
+
+.contact-us label {
+  font-size: 16px;
+  color: #f5f5f5; /* אפור בהיר */
+  text-align: left;
+  width: 100%; /* גורם לתוויות להיות ברוחב מלא */
+}
+
+.contact-us input,
+.contact-us textarea {
+  width: 100%; /* תיבות טקסט ברוחב מלא */
+  padding: 10px;
+  font-size: 14px;
+  color: #f5f5f5; /* אפור בהיר */
+  background-color: #1e1e1e; /* אפור כהה */
+  border: 1px solid #956b00; /* גבול זהב כהה */
+  border-radius: 4px; /* פינות מעוגלות */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5); /* צל פנימי */
+  transition: border-color 0.3s, box-shadow 0.3s;
+  max-width: 100%; /* ודא שהתיבות לא עוברות את רוחב הפורם */
+}
+
+.contact-us input:focus,
+.contact-us textarea:focus {
+  border-color: #f5f5f5; /* גבול לבן */
+  box-shadow: 0 0 8px rgba(245, 245, 245, 0.5); /* הבלטה */
+  outline: none;
+}
+
+.contact-us button {
+  padding: 10px; /* התאמת הגובה לגובה תיבות הטקסט */
+  font-size: 14px; /* גודל הטקסט כמו בתיבות */
+  font-weight: bold;
+  color: #f5f5f5; /* טקסט לבן */
+  background-color: #956b00; /* זהב כהה */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  width: 100%; /* כפתור ברוחב מלא */
+  max-width: 300px; /* גודל מקסימלי לכפתור */
+}
+
+.contact-us button:hover {
+  background-color: #121212; /* שחור כהה */
+  transform: scale(1.05); /* הגדלה */
+}
+
+.about-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #2b2b2b; /* שחור כהה */
+  border: 1px solid #956b00; /* גבול זהב כהה */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border-radius: 8px; /* פינות מעוגלות */
+}
+
+.about-container h1 {
+  font-size: 36px;
+  color: #956b00; /* זהב כהה */
+  margin-bottom: 20px;
+  text-transform: uppercase; /* אותיות גדולות */
+}
+
+.about-container p {
+  font-size: 18px;
+  color: #f5f5f5; /* אפור בהיר */
+  margin: 15px 0;
+  line-height: 1.8; /* מרווח בין שורות */
+}
+
+.about-container p span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #956b00; /* זהב כהה */
+}
+
+.about-container img {
+  width: 100%;
+  max-width:200px;
+  height: auto;
+  /* margin: 20px 0; */
+  border-radius: 8px; /* פינות מעוגלות */
+  border: 2px solid #956b00; /* מסגרת זהב */
+}
+
+.about-container .buy-now-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background-color: #956b00; /* זהב כהה */
+  color: #000000; /* שחור */
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px; /* פינות מעוגלות */
+  transition: background-color 0.3s, color 0.3s;
+  border: 1px solid #000000;
+}
+
+.about-container .buy-now-btn:hover {
+  background-color: #121212; /* שחור */
+  color: #ffffff; /* לבן */
+}
+.log-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #2b2b2b;
+  font-family: Arial, sans-serif;
+}
+
+.form-box {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background: #1e1e1e;
+  border: 1px solid #956b00;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+}
+
+.form {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 200%; /* שתי הטפסים יחד */
+}
+
+.form-box.show-login .form {
+  transform: translateX(0);
+}
+
+.form-box.show-register .form {
+  transform: translateX(-50%);
+}
+
+.login-form,
+.register-form {
+  width: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden; /* טופס מוסתר */
+  opacity: 0;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+
+.login-form.active,
+.register-form.active {
+  visibility: visible; /* טופס גלוי */
+  opacity: 1;
+}
+
+h2 {
+  font-size: 24px;
+  color: #956b00;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 16px;
+  color: #f5f5f5;
+  background-color: #121212;
+  border: 1px solid #956b00;
+  border-radius: 4px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #f5f5f5;
+  box-shadow: 0 0 8px rgba(245, 245, 245, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background-color: #956b00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #121212;
+  transform: scale(1.05);
+}
+
+.toggle-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #956b00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.toggle-button:hover {
+  background-color: #121212;
+  transform: scale(1.05);
+}
