@@ -5,7 +5,7 @@ export const CreateStore=()=>{
 const[users,setUsers]=useState([
 
 {id: 1,name:"ruti",pasword:"1234",email:"123@r",rool:"manager"},
-{id: 2,name:"nava",pasword:"1111",email:"123@n",rool:"user"},
+{id: 2,name:"nava",pasword:"1111",email:"123@n",rool:"manager"},
 {id: 3,name:"tamar",pasword:"2222",email:"123@t",rool:"user"},
 {id: 4,name:"sara",pasword:"3333",email:"123@s",rool:"user"}
 ])
