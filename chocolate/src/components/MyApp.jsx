@@ -3,9 +3,9 @@ import { Routing } from '../components/Routing';
 import { Link } from 'react-router-dom';
 import { FaShoppingCart} from 'react-icons/fa';
 import NavBar from './NavBar';
+import Swal from 'sweetalert2';
 
-
-function MyApp() {
+function MyApp({products}) {
  
     
     const [cart, setCart] = useState([]);
@@ -13,7 +13,17 @@ function MyApp() {
 
     const addToCart = (product) => {
         setCart((cart) => [...cart, product]);
-        alert("המוצר נוסף בהצלחה!");
+        Swal.fire({
+            position: "center",
+            icon: "success",
+            title: "המוצר נוסף בהצלחה",
+            showConfirmButton: false,
+            timer: 1300,
+            customClass: {
+              popup: "custom-swal", // עיצוב לחלון כולו
+               
+            }
+          });
     };
 
     const removeFromCart = (productId) => {
@@ -47,6 +57,7 @@ function MyApp() {
                     cart={cart}
                     removeFromCart={removeFromCart}
                     calculateTotal={calculateTotal}
+                    products={products}
                 />
             </main>
         </>

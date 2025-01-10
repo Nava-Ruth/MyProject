@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import MyContex from '../context';
+import MyContex from '../Context/context';
  
 
 function Profile() {

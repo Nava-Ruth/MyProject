@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import "./styles.css";
-import MyContex from "../context";
+import MyContex from "../Context/context";
 import { useNavigate } from "react-router-dom";
+ 
 
 function Log() {
 
@@ -11,7 +12,9 @@ function Log() {
   const[name,setName]=useState("");
  
   //יבוא הפונקציות מהסטור
-  const { login, sigenup } = useContext(MyContex);
+
+  
+  const {signup,login} = useContext(MyContex);
 
   const onLog = () => {
     if (login(email, pas)) {
@@ -21,15 +24,13 @@ function Log() {
     }
 };
 
-  const onSigen = () => {
-    const newUser = { name, email, pas };
-    if(sigenup(newUser))
-    {
-      nav("/profile");
-    }
-    
-    
-  };
+  const onSign = () => {
+  const newUser = { name, email, pas};
+  if (signup(newUser)) {  
+    nav("/profile");
+  }
+};
+
   
 
   const [isLogin, setIsLogin] = useState(true); 
@@ -60,7 +61,7 @@ function Log() {
             <input type="text" placeholder="Username" onChange={e=>{setName(e.target.value)}}/>
             <input type="email" placeholder="Email" onChange={e=>{setEmail(e.target.value)}}/>
             <input type="password" placeholder="Password"onChange={e=>{setPas(e.target.value)}} />
-            <button onClick={()=>onSigen()}>Register</button>
+            <button onClick={()=>onSign()}>Register</button>
           </div>
         </div>
       </div>

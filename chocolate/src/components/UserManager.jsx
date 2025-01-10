@@ -1,5 +1,5 @@
 import { useContext, useEffect } from "react";
-import MyContex from "../context";
+import MyContex from "../Context/context";
 import { useNavigate } from "react-router-dom";
 
 function UserManager() {

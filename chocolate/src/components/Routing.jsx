@@ -13,7 +13,7 @@ import UserManager from './UserManager';
 
 
 //מקבל פונקציןת ומערך שיעביר כפרופס
-export const Routing = ({ addToCart, cart, removeFromCart, calculateTotal }) => {
+export const Routing = ({ addToCart, cart, removeFromCart, calculateTotal,products }) => {
   return (
     <Routes>
 
@@ -23,7 +23,7 @@ export const Routing = ({ addToCart, cart, removeFromCart, calculateTotal }) => 
       <Route path="/payment" element={<Payment />} />
       <Route path="/details/:image/:id/:name/:price" element={<Details addToCart={addToCart} />} />
       <Route path="/ContactUs" element={<ContactUs />} />
-      <Route path="/Product" element={<Product addToCart={addToCart} />} />
+      <Route path="/Product" element={<Product addToCart={addToCart} products={products} />} />
       <Route path="/Cart" element={<Cart cart={cart} removeFromCart={removeFromCart} calculateTotal={calculateTotal} />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/log" element={<Log />} />

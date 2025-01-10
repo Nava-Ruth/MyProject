@@ -1,5 +1,5 @@
 import { FaUser } from 'react-icons/fa';
-import MyContex from '../context';
+import MyContex from '../Context/context';
 import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 
