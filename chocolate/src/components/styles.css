@@ -455,12 +455,14 @@ button:hover {
   background-color: #121212;
   transform: scale(1.05);
 }
-
+/* //popup */
 .custom-swal
 {
 background-color: #2b2b2b;
 color: #ffffff;
-
 }
+
+/* //payMent */
+
 
  

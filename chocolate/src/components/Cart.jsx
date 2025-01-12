@@ -107,8 +107,19 @@
 // export default Cart;
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 
 function Cart({ cart = [], removeFromCart, calculateTotal }) {
+
+
+  const nav = useNavigate();
+
+  const move = () => {
+    nav("/payment")
+   }
+
+
   // שמירת הכמויות של המוצרים בסל
   const [quty, setQuty] = useState(
     cart.reduce((acc, product) => {
@@ -173,9 +184,12 @@ function Cart({ cart = [], removeFromCart, calculateTotal }) {
 
 
         <strong>סה"כ לתשלום:{calculateTotal()}</strong> 
-
+        <button className='pasButton' onClick={()=>move()}>עבור לתשלום</button>
       </div>
+      
     </div>
+
+    
   );
 }
 

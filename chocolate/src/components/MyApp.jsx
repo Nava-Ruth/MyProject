@@ -5,6 +5,7 @@ import { FaShoppingCart} from 'react-icons/fa';
 import NavBar from './NavBar';
 import Swal from 'sweetalert2';
 
+
 function MyApp({products}) {
  
     
@@ -43,7 +44,6 @@ function MyApp({products}) {
                 <nav>
                     <Link to="/home">דף הבית</Link>
                     <Link to="/about">אודות</Link>
-                    <Link to="/payment">תשלום</Link>
                     <Link to="/ContactUs">צור קשר</Link>
                     <Link to="/Product">מוצרים</Link>
                     <Link to="/Cart"> <FaShoppingCart /> </Link>
