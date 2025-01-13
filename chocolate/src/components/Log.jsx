@@ -2,9 +2,26 @@ import React, { useContext, useState } from "react";
 import "./styles.css";
 import MyContex from "../Context/context";
 import { useNavigate } from "react-router-dom";
+
  
 
 function Log() {
+
+  //עיצוב
+  const divStyle = {
+    backgroundImage: `url("/images/bak.png")`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "94vh",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "#fff",
+    textAlign: "center",
+    padding: "20px",
+     
+  };
 
   const nav = useNavigate();
   const [email,setEmail]=useState("");
@@ -41,6 +58,7 @@ function Log() {
   };
 
   return (
+    <div style={divStyle}>
     <div className="log-container">
       <div className={`form-box ${isLogin ? "show-login" : "show-register"}`}>
         <div className="form">
@@ -68,6 +86,7 @@ function Log() {
       <button className="toggle-button" onClick={toggleForm}>
         {isLogin ? "Go to Register" : "Go to Login"}
       </button>
+    </div>
     </div>
   );
 }

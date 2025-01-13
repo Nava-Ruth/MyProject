@@ -12,7 +12,7 @@ body {
     background-color: #1e1e1e; /* אפור כהה */
     padding: 15px 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);  
-    border-bottom: 1px solid #956b00; /* קו זהב כהה למעלה */
+    border-bottom: 1px solid #956b00; /* קו זהב כהה  */
 
   }
   
@@ -31,8 +31,23 @@ body {
     padding: 8px 15px;
     transition: background-color 0.3s, color 0.3s;
   }
+  header nav button{
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    color: #956b00;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 8px 15px;
+    transition: background-color 0.3s, color 0.3s;
+  }
   
   header nav a:hover {
+    background-color: #956b00; /* זהב כהה */
+    color: #121212; /* שחור */
+  }
+
+  header nav button:hover {
     background-color: #956b00; /* זהב כהה */
     color: #121212; /* שחור */
   }

@@ -1,26 +1,45 @@
-
 import React from 'react';
 import './ContactUs';
-  
-function ContactUs() {
+import Swal from 'sweetalert2';
 
-  
-  const mas=()=>{
-    alert("פניתך  יתקבלה "); 
-  }
+function ContactUs() {
+  const divStyle = {
+    backgroundImage: `url("/images/bak.png")`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    height: "87vh",
+    padding: "20px",
+  };
+
+  const mas = (event) => {
+    event.preventDefault(); // מונע את שליחת הטופס והטעינה מחדש של הדף
+
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "התשלום בוצע בהצלחה",
+      showConfirmButton: false,
+      timer: 1300,
+      customClass: {
+        popup: "custom-swal", // עיצוב לחלון כולו
+      },
+    });
+  };
 
   return (
-    <div className="contact-us">
-      <h1>Contact Us</h1>
-      <form>
-        <label>Name:</label>
-        <input type="text" placeholder="Enter your name" />
-        <label>Email:</label>
-        <input type="email" placeholder="Enter your email" />
-        <label>Message:</label>
-        <textarea placeholder="Your message"></textarea>
-        <button type="submit" onClick={mas}>Send</button>
-      </form>
+    <div style={divStyle}>
+      <div className="contact-us">
+        <h1>Contact Us</h1>
+        <form onSubmit={mas}>
+          <label>Name:</label>
+          <input type="text" placeholder="Enter your name" />
+          <label>Email:</label>
+          <input type="email" placeholder="Enter your email" />
+          <label>Message:</label>
+          <textarea placeholder="Your message"></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </div>
   );
 }

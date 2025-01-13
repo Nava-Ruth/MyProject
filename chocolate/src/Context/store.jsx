@@ -1,4 +1,5 @@
 import { useState } from "react"
+import Swal from 'sweetalert2';
 
 
 export const CreateStore=()=>{
@@ -19,26 +20,43 @@ const store = {
   login: (email, password) => {
     const user = users.find(u => u.email === email && u.password === password);
     if (!user) {
-      alert("אחד הפרטים שגויים");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "Something went wrong!",
+        footer: '<a href="#">Why do I have this issue?</a>',
+        customClass: {
+          popup: "custom-swal", // עיצוב לחלון כולו
+        }
+      });
       return false;
     } else {
       setCurrentUser(user);
       return true;
+
     }
   },
 
   signup: (newUser) => { 
-    if (!newUser.name || !newUser.email || !newUser.password) {
-      alert("פרטי המשתמש אינם תקינים. אנא מלא את כל השדות.");
-      return false;
-    }
+    // if (!newUser || !newUser.name || !newUser.email || !newUser.password) {
+    //   alert("פרטי המשתמש אינם תקינים. אנא מלא את כל השדות.");
+    //   return false;
+    // }
     if (users.find(u => u.email === newUser.email)) {
-      alert("משתמש עם כתובת מייל זו כבר קיים.");
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "כתובת מייל קיימת",
+        footer: '<a href="#">Why do I have this issue?</a>',
+        customClass: {
+          popup: "custom-swal", // עיצוב לחלון כולו
+        }
+      });
       return false;
     } else {
       setUsers([...users, { ...newUser, id: users.length + 1 }]);
       setCurrentUser(newUser);
-      alert("נרשמת בהצלחה!");
+      alert("נרשמת בהצלחה!"); 
       return true;
     }
   },

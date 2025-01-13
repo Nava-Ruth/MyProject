@@ -1,3 +1,20 @@
+/* עמוד הבית */
+.home { 
+  /* background-image:url('`/images/1.jpg'); */
+  background-size: cover; /* גורם לתמונה להתאים לגודל המלא של האלמנט */
+  background-position: center; /* ממרכז את התמונה */
+  background-repeat: no-repeat; /* מונע חזרתיות של התמונה */
+  height: 100vh; /* גובה המסך כולו */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white; /* אם הטקסט שלך בהיר, השתמש בצבע טקסט מתאים */
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* הצללה לטקסט */
+}
+
+
+
 .card-container {
   display: flex;
   flex-wrap: wrap; /* מאפשר לשבור שורות */
@@ -70,6 +87,7 @@
   height: 5vh;
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: #956b00; /* זהב כהה */
   color: #ffffff;
   border: none;
@@ -89,6 +107,8 @@
 .add-to-cart-btn svg {
   font-size: 16px; /* גודל האייקון */
 }
+
+
 
 /* עיצוב פרטי המוצר */
 .details-container {
@@ -209,6 +229,25 @@
   padding: 20px;
 }
 
+.pasButton{
+  width: 20%;
+  height: 5vh;
+  background-color: #956b00; /* זהב כהה */
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  border-radius: 2%;
+  text-align: center;
+  margin-right: 60px;
+  margin-top: 2vh;
+}
+.pasButton:hover{
+  background-color: #121212; /* שחור כהה */
+  transform: scale(1.05);
+  border-radius: 2%;
+}
+
 .contact-us {
   max-width: 600px;
   margin: 50px auto;
@@ -321,7 +360,6 @@
   width: 100%;
   max-width:200px;
   height: auto;
-  /* margin: 20px 0; */
   border-radius: 8px; /* פינות מעוגלות */
   border: 2px solid #956b00; /* מסגרת זהב */
 }
@@ -349,15 +387,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  background: #2b2b2b;
   font-family: Arial, sans-serif;
 }
 
 .form-box {
   position: relative;
-  width: 400px;
-  height: 300px;
+  width: 600px;
+  height: 400px;
   background: #1e1e1e;
   border: 1px solid #956b00;
   border-radius: 8px;
@@ -391,6 +427,7 @@
   visibility: hidden; /* טופס מוסתר */
   opacity: 0;
   transition: opacity 0.5s, visibility 0.5s;
+  gap: 15px;
 }
 
 .login-form.active,
@@ -441,6 +478,7 @@ button:hover {
 }
 
 .toggle-button {
+  width: 20;
   margin-top: 20px;
   padding: 10px 20px;
   background-color: #956b00;
@@ -452,7 +490,7 @@ button:hover {
 }
 
 .toggle-button:hover {
-  background-color: #121212;
+  background-color: #2d2b2b;
   transform: scale(1.05);
 }
 /* //popup */
@@ -462,7 +500,215 @@ background-color: #2b2b2b;
 color: #ffffff;
 }
 
-/* //payMent */
+ /* ניהול משתמשים */
+
+ /* עיצוב טבלה */
+.table-container {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 20px;
+  background-color: #2b2b2b; /* שחור כהה */
+  border: 1px solid #956b00; /* גבול זהב כהה */
+  border-radius: 8px; /* פינות מעוגלות */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: #f5f5f5; /* טקסט אפור בהיר */
+}
+
+.table-container h1 {
+  font-size: 24px;
+  color: #956b00; /* זהב כהה */
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #956b00;
+  font-size: 18px;
+}
+
+th {
+  background-color: #956b00; /* זהב כהה */
+  color: #000000; /* שחור */
+  font-weight: bold;
+}
+
+td {
+  background-color: #1e1e1e; /* אפור כהה */
+}
+
+tr:hover {
+  background-color: #2b2b2b; /* שחור כהה */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.action-btns {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.action-btns button {
+  padding: 6px 12px;
+  background-color: #956b00; /* זהב כהה */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.action-btns button:hover {
+  background-color: #121212; /* שחור כהה */
+  transform: scale(1.05);
+}
+
+/* אודות */
+/* עיצוב הדף כולו */
+.AboutUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #121212; /* צבע רקע כהה */
+  color: #ffffff; /* צבע טקסט לבן */
+  padding: 0 20px;
+  height: 100vh; /* הדף יתפוס את כל גובה המסך */
+  overflow: hidden; /* למנוע גלילה */
+}
+
+/* כותרת "אודות" */
+/* .about-header {
+  text-align: center;
+  margin-bottom: 20px;
+} */
+
+.about-header h1 {
+  font-size: 2rem;
+  color: #956b00; /* צבע זהב חום */
+  margin: 0;
+}
+
+/* מסגרת הווידאו */
+.video-frame {
+  width: 1536.2px; /* רוחב מלא */
+  max-width: 1800px; /* מגבלה לרוחב */
+  height: 400px; /* גובה מוגבל */
+  border: 6px solid #956b00; /* מסגרת בצבע זהב-חום */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+  overflow: hidden; /* חיתוך אם הווידאו יוצא מגבולות */
+  border-left: #956b00;
+  border-right: #956b00;
+
+}
+
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* להתאים את הווידאו למסגרת */
+}
+
+/* טקסט אודות */
+.about-text {
+  text-align: center;
+
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: #956b00; /* צבע טקסט אפרפר */
+  padding: 0 10px;
+}
+.about-text {
+  text-align: center; /* טקסט ממורכז */
+}
+/* כיתוב בתוך מלבן קטן */
+.about-text p {
+  font-size: 1.2rem;
+  color: #956b00; /* צבע טקסט */
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #956b00; /* צבע גבול זהב-חום */
+  width: 100%; /* גודל המלבן */
+  max-width: 1480px; /* מקסימום רוחב */
+  /* margin: 20px auto;  */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* הצללה עדינה */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* אנימציה עדינה */
+}
+
+/* מיכל הכפתור */
+.button-container {
+  display: flex;
+  justify-content: center; /* ממקם את הכפתור במרכז בציר ה-X */
+  align-items: center; /* ממקם את הכפתור במרכז גם בציר ה-Y */
+  height: 100vh; /* גובה של 100% מהדף כדי למרכז את התוכן לאורך כל הדף */
+  margin: 0; /* ביטול margin אם יש */
+  padding: 0; /* ביטול padding אם יש */
+}
+
+/* הכפתור עצמו */
+.taste-button {
+  background-color: #2b2b2b; /* צבע רקע זהב-חום */
+  color: #ffffff; /* טקסט בצבע לבן */
+  font-size: 1.1rem; /* גודל כפתור */
+  padding: 15px 20px; /* ריווח פנימי */
+  border: 2px solid #956b00; /* מסגרת */
+  border-radius: 4px; /* פינות מעוגלות */
+  cursor: pointer; /* יד שמסמנת שניתן ללחוץ */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* הצללה */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* אנימציה */
+  display: flex; /* הכפתור עכשיו יוכל למרכז את התוכן */
+  align-items: center; /* ממרכז את האייקון */
+  gap: 10px; /* מרווח בין הטקסט לאייקון */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.taste-button:hover {
+  background-color: #956b00; /* רקע כהה יותר */
+  transform: translateY(-3px); /* הכפתור עולה מעט */
+}
+
+.taste-button:active {
+  transform: translateY(2px); /* הכפתור יורד בלחיצה */
+}
+
+
+.arrow-icon {
+  font-size: 1.8rem; /* גודל החץ */
+  transform: rotate(180deg); /* סובב את החץ ב-180 מעלות כך שיצביע שמאלה */
+  animation: bounce-left 1s infinite ease-in-out; /* אנימציה חוזרת בצורה חלקה */
+}
+
+@keyframes bounce-left {
+  0%, 100% {
+    transform: translateX(0); /* החץ במיקום ההתחלתי */
+  }
+  50% {
+    transform: translateX(-5px); /* תזוזה קלה שמאלה */
+  }
+}
+/* כותרת "אודותינו" על הסרטון */
+.about-header {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.5rem;
+  color: #956b00;
+  font-weight: bold;
+  text-shadow: 2px 5px 5px rgba(0, 0, 0, 0.5); /* הצללה יפה */
+}
+
+
+  
+ 
 
 
  

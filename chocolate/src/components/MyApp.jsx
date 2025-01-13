@@ -6,7 +6,7 @@ import NavBar from './NavBar';
 import Swal from 'sweetalert2';
 
 
-function MyApp({products}) {
+function MyApp({products,remove}) {
  
     
     const [cart, setCart] = useState([]);
@@ -34,7 +34,8 @@ function MyApp({products}) {
     const calculateTotal = () => {
         return cart.reduce((total, product) => total + product.price, 0);
     };
-
+    //הסרת מוצר
+    
 
 
 
@@ -58,6 +59,7 @@ function MyApp({products}) {
                     removeFromCart={removeFromCart}
                     calculateTotal={calculateTotal}
                     products={products}
+                    remove={remove}
                 />
             </main>
         </>

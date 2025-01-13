@@ -2,27 +2,41 @@ import { useContext, useEffect } from "react";
 import MyContex from "../Context/context";
 import { useNavigate } from "react-router-dom";
 
-function UserManager() {
-    const { users, currentUser } = useContext(MyContex);
-    const navigate = useNavigate();
+function UserManagerTable() {
+    const { users } = useContext(MyContex);
 
-    // אם המשתמש אינו מחובר או שאינו מנהל, להעביר לעמוד הבית
-    useEffect(() => {
-        if (!currentUser || currentUser.rool !== "manager") {
-            navigate("/home");
-        }
-    }, [currentUser, navigate]);
+    
 
     return (
-        <>
+        <div className="table-container">
             <h1>ניהול משתמשים</h1>
-            <ul>
-                {users && users.map(u => (
-                    <li key={u.id}>{u.id} | {u.name} | {u.email}</li>
-                ))}
-            </ul>
-        </>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>שם</th>
+                        <th>אימייל</th>
+                        <th>סטטוס</th>
+                        <th>פעולות</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {users && users.map((u) => (
+                        <tr key={u.id}>
+                            <td>{u.id}</td>
+                            <td>{u.name}</td>
+                            <td>{u.email}</td>
+                            <td>{u.rool}</td>
+                            <td className="action-btns">
+                                <button>ערוך</button>
+                                <button>מחיקה</button>
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
     );
 }
 
-export default UserManager;
+export default UserManagerTable;

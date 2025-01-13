@@ -13,22 +13,21 @@ import UserManager from './UserManager';
 
 
 //מקבל פונקציןת ומערך שיעביר כפרופס
-export const Routing = ({ addToCart, cart, removeFromCart, calculateTotal,products }) => {
+export const Routing = ({ addToCart, cart, removeFromCart, calculateTotal,products ,remove}) => {
   return (
     <Routes>
 
       <Route path="/" element={<Navigate to="/home" />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/about" element={<AboutUs />} />
-      <Route path="/payment" element={<Payment />} />
+      <Route path="/payment" element={<Payment cart={cart} calculateTotal={calculateTotal}/>} />
       <Route path="/details/:image/:id/:name/:price" element={<Details addToCart={addToCart} />} />
       <Route path="/ContactUs" element={<ContactUs />} />
-      <Route path="/Product" element={<Product addToCart={addToCart} products={products} />} />
+      <Route path="/Product" element={<Product addToCart={addToCart} products={products} remove={remove}/>} />
       <Route path="/Cart" element={<Cart cart={cart} removeFromCart={removeFromCart} calculateTotal={calculateTotal} />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/log" element={<Log />} />
       <Route path="/users" element={<UserManager />} />
-
       <Route path="*" element={<><h1>404 Not Found</h1></>} />
     </Routes>
   );

@@ -1,0 +1,101 @@
+.payment {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 1px solid #956b00; /* מסגרת זהב */
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  color: #f5f5f5;
+  text-align: right; /* טקסט מצד ימין */
+   
+  background-size: cover; /* תצוגה של התמונה בצורה מכסה */
+  background-position: center; /* מיקום התמונה במרכז */
+  background-attachment: fixed; /* התמונה נשארת קבועה בזמן גלילה */
+}
+
+.payment h1 {
+  font-size: 24px;
+  color: #956b00;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.payment p {
+  font-size: 18px;
+  color: #f5f5f5;
+  margin: 15px 0;
+  line-height: 1.8;
+  text-align: right; /* טקסט מצד ימין */
+}
+
+.payment img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 4px;
+}
+
+.payment button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #956b00;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 20px;
+  margin-left: 60px;
+}
+
+.payment button:hover {
+  background-color: #121212;
+  transform: scale(1.05);
+}
+
+.payment .cart-empty {
+  font-size: 18px;
+  color: #f5f5f5;
+  text-align: center;
+  padding: 20px;
+}
+
+/* חלוקה לכל div עם מסגרת זהב */
+.payment .user-details {
+  padding: 20px;
+  border: 1px solid #956b00; /* מסגרת זהב */
+  margin-bottom: 20px;
+  text-align: right; /* טקסט מצד ימין */
+}
+
+.payment .cart-details {
+  padding: 20px;
+  border: 1px solid #956b00; /* מסגרת זהב */
+  margin-bottom: 20px;
+  text-align: right; /* טקסט מצד ימין */
+}
+
+.payment .shipping-options {
+  padding: 20px;
+  border: 1px solid #956b00; /* מסגרת זהב */
+  margin-bottom: 20px;
+  text-align: right; /* טקסט מצד ימין */
+}
+
+.payment .payment-summary {
+  padding: 20px;
+  border: 1px solid #956b00; /* מסגרת זהב */
+  text-align: center;
+}
+
+.payment .shipping-option {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  text-align: right; /* טקסט מצד ימין */
+}
+
+.payment .shipping-option input {
+  margin-left: 10px; /* הזזת הכפתור לצד שמאל */
+}

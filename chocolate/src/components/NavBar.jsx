@@ -14,21 +14,24 @@ function NavBar() {
 
     return (
         <nav>
+             {currentUser?.rool === "manager" && <Link to="/users">ניהול משתמשים</Link>}
+
             {!currentUser ? (
                 <>
                     <Link to="/log">הרשם/התחבר</Link>
                 </>
             ) : (
                 <>
-                    <button onClick={handleLogout}>התנתקות</button>
+                   
                     <Link to="/profile">
                         <FaUser />
                         <span>{currentUser.name}</span>
                     </Link>
+                    <button onClick={handleLogout}>התנתקות</button>
                 </>
             )}
 
-            {currentUser?.rool === "manager" && <Link to="/users">ניהול משתמשים</Link>}
+           
         </nav>
     );
 }

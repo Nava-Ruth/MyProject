@@ -1,28 +1,48 @@
+
 import React from 'react';
 import './styles.css'; // לוודא שה-CSS מחובר
 import { useNavigate } from 'react-router-dom';
 
 function AboutUs() {
-
   const nav = useNavigate();
 
   const move = () => {
-   nav("/Product")
-  }
+    nav("/Product");
+  };
+
   return (
-    <div className="about-container">
-      <h1>אודותינו</h1>
-      <p>
-        <span>ברוכים הבאים</span> לחנות שלנו, המקום המושלם לכל אוהבי השוקולד. אנו מתמחים בפרלינים בעבודת יד, שוקולדים איכותיים ומגוון רחב של פינוקים מושקעים.
-      </p>
-      <p>
-        המוצרים שלנו מיוצרים באהבה, עם דגש על איכות בלתי מתפשרת ועיצוב ייחודי. החנות שלנו נועדה לתת לכם את החוויה המתוקה ביותר, באווירה חמימה ומפנקת.
-      </p>
-      <img src="/images/1.jpg" alt="חנות שוקולדים" />
-      <br />
+    <div className="about-page">
+      {/* <header className="about-header">
+        <h1>אודות</h1>
+      </header> */}
 
-      <button onClick={()=>move()}>התחל קנייה</button>
+      {/* הסרטון עם מסגרת יפה */}
+      <div className="video-frame">
+        <video autoPlay loop muted className="hero-video">
+          <source src="/videos/a.mp4" type="video/mp4" />
+          
+        </video>
+        <div className="about-header">
+          <h2>אודותינו</h2>
+        </div>
+      </div>
 
+      {/* טקסט מתחת לסרטון */}
+      <div className="about-text">
+        <p>
+        ברוכים הבאים לבוטיק השוקולד שלנו! כאן, כל פרלין ושוקולד מיוצרים בעבודת יד ובאהבה, עם טעמים מפתיעים וחומרים איכותיים. 
+          <br />
+        אנחנו מזמינים אתכם לחוות חוויה מתוקה ומפנקת, 
+        ולהתענג על שוקולדים שיכבשו את הלב.
+
+
+       
+       
+        </p>
+      </div>
+      <button className="taste-button" onClick={() => nav("/Product")}>
+      !חייב לטעום את התענוג הזה <span className="arrow-icon">→</span>
+  </button>
     </div>
   );
 }
