@@ -1,11 +1,11 @@
 import { useContext, useEffect } from "react";
 import MyContex from "../Context/context";
-import { useNavigate } from "react-router-dom";
+ 
 
 function UserManagerTable() {
     const { users } = useContext(MyContex);
 
-    
+
 
     return (
         <div className="table-container">

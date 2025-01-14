@@ -648,7 +648,7 @@ tr:hover {
   justify-content: center; /* ממקם את הכפתור במרכז בציר ה-X */
   align-items: center; /* ממקם את הכפתור במרכז גם בציר ה-Y */
   height: 100vh; /* גובה של 100% מהדף כדי למרכז את התוכן לאורך כל הדף */
-  margin: 0; /* ביטול margin אם יש */
+  margin: 0;
   padding: 0; /* ביטול padding אם יש */
 }
 
@@ -668,6 +668,7 @@ tr:hover {
   gap: 10px; /* מרווח בין הטקסט לאייקון */
   margin-left: auto;
   margin-right: auto;
+  margin-top: 5vh;
 }
 
 .taste-button:hover {

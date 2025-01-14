@@ -10,7 +10,7 @@ function Cart({ cart = [], removeFromCart, calculateTotal }) {
 
   const move = () => {
     nav("/payment")
-   }
+  }
 
 
   // שמירת הכמויות של המוצרים בסל
@@ -33,7 +33,7 @@ function Cart({ cart = [], removeFromCart, calculateTotal }) {
   const decreaseQuty = (id) => {
     setQuty((prev) => ({
       ...prev,
-      [id]: Math.max(prev[id] - 1, 1), // הכמות לא יורדת מתחת ל-1
+      [id]: Math.max(prev[id] - 1, 1),
     }));
   };
 
@@ -47,6 +47,7 @@ function Cart({ cart = [], removeFromCart, calculateTotal }) {
       <h2 className="cart-title">הסל שלך</h2>
       <div className="cart-container">
         <ul className="cart-list">
+          {/* //אם העגלה ריקה מציג הודעה ואם לא את המוצרים */}
           {cart.length === 0 ? (
             <li className="cart-empty">העגלה ריקה</li>
           ) : (
@@ -75,14 +76,14 @@ function Cart({ cart = [], removeFromCart, calculateTotal }) {
           )}
         </ul>
 
-        <button className='pasButton' onClick={()=>move()}>עבור לתשלום</button>
-        <strong>סה"כ לתשלום:{calculateTotal()}</strong> 
-       
+        <button className='pasButton' onClick={() => move()}>עבור לתשלום</button>
+        <strong>סה"כ לתשלום:{calculateTotal()}</strong>
+
       </div>
-      
+
     </div>
 
-    
+
   );
 }
 

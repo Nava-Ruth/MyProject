@@ -12,16 +12,16 @@ function ContactUs() {
   };
 
   const mas = (event) => {
-    event.preventDefault(); // מונע את שליחת הטופס והטעינה מחדש של הדף
+    event.preventDefault(); 
 
     Swal.fire({
       position: "center",
       icon: "success",
-      title: "התשלום בוצע בהצלחה",
+      title: "פניתך היתקבלה ",
       showConfirmButton: false,
       timer: 1300,
       customClass: {
-        popup: "custom-swal", // עיצוב לחלון כולו
+        popup: "custom-swal", 
       },
     });
   };

@@ -1,6 +1,6 @@
 
 import React from 'react';
-import './styles.css'; // לוודא שה-CSS מחובר
+import '../css/styles.css';  
 import { useNavigate } from 'react-router-dom';
 
 function AboutUs() {
@@ -12,10 +12,6 @@ function AboutUs() {
 
   return (
     <div className="about-page">
-      {/* <header className="about-header">
-        <h1>אודות</h1>
-      </header> */}
-
       {/* הסרטון עם מסגרת יפה */}
       <div className="video-frame">
         <video autoPlay loop muted className="hero-video">

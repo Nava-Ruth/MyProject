@@ -1,17 +1,17 @@
-import {useState } from 'react';
+import { useState } from 'react';
 import { Routing } from '../components/Routing';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart} from 'react-icons/fa';
+import { FaShoppingCart } from 'react-icons/fa';
 import NavBar from './NavBar';
 import Swal from 'sweetalert2';
 
 
-function MyApp({products,remove}) {
- 
-    
+function MyApp({ products, remove }) {
+
+    //עגלה
     const [cart, setCart] = useState([]);
 
-
+    //הוספה לעגלה
     const addToCart = (product) => {
         setCart((cart) => [...cart, product]);
         Swal.fire({
@@ -21,24 +21,19 @@ function MyApp({products,remove}) {
             showConfirmButton: false,
             timer: 1300,
             customClass: {
-              popup: "custom-swal", // עיצוב לחלון כולו
-               
+                popup: "custom-swal",
             }
-          });
+        });
     };
 
+    //מחיקה מעגלה
     const removeFromCart = (productId) => {
         setCart((cart) => cart.filter((product) => product.id !== productId));
     };
-
+    //חישוב סכום
     const calculateTotal = () => {
         return cart.reduce((total, product) => total + product.price, 0);
     };
-    //הסרת מוצר
-    
-
-
-
     return (
         <>
             <header>
@@ -48,11 +43,12 @@ function MyApp({products,remove}) {
                     <Link to="/ContactUs">צור קשר</Link>
                     <Link to="/Product">מוצרים</Link>
                     <Link to="/Cart"> <FaShoppingCart /> </Link>
-                    <NavBar/>
+                    <NavBar />
                 </nav>
             </header>
 
             <main>
+                {/* //שליחת פונקציות ומשתנים בפרופס */}
                 <Routing
                     addToCart={addToCart}
                     cart={cart}

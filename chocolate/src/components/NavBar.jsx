@@ -4,17 +4,19 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useContext } from 'react';
 
 function NavBar() {
+
+    //שליפה מהקונטקסט
     const { currentUser, logout } = useContext(MyContex);
     const nav = useNavigate();
 
     const handleLogout = () => {
         logout(); // קריאה לפונקציית ההתנתקות מתוך הקונטקסט
-        nav("/home"); // ניווט לעמוד הבית לאחר ההתנתקות
+        nav("/home");
     };
 
     return (
         <nav>
-             {currentUser?.rool === "manager" && <Link to="/users">ניהול משתמשים</Link>}
+            {currentUser?.rool === "manager" && <Link to="/users">ניהול משתמשים</Link>}
 
             {!currentUser ? (
                 <>
@@ -22,7 +24,7 @@ function NavBar() {
                 </>
             ) : (
                 <>
-                   
+
                     <Link to="/profile">
                         <FaUser />
                         <span>{currentUser.name}</span>
@@ -31,7 +33,7 @@ function NavBar() {
                 </>
             )}
 
-           
+
         </nav>
     );
 }

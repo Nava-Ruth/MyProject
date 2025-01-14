@@ -2,7 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import MyContex from '../Context/context';
 import Swal from 'sweetalert2';
-import "./pay.css"
+import  '../css/pay.css'
 
 function Payment({ cart, calculateTotal }) {
   const { currentUser } = useContext(MyContex);
@@ -15,7 +15,7 @@ function Payment({ cart, calculateTotal }) {
       showConfirmButton: false,
       timer: 1300,
       customClass: {
-        popup: "custom-swal", // עיצוב לחלון כולו
+        popup: "custom-swal",
       }
     });
   }
@@ -25,7 +25,7 @@ function Payment({ cart, calculateTotal }) {
       <div className="user-details">
         <h1>{!currentUser ? ("אינך מחובר") : (currentUser.name)}</h1>
         <p>כתובת: עוזיאל 98 |  קומה:5  | עיר :ירושלים </p>
-  
+
       </div>
 
       <div className="cart-details">
